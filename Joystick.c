@@ -135,13 +135,13 @@ static const command step[] = {
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //13 laps (roughly 3 egg cycles)
-
-
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //14 lap
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //15 laps
@@ -163,7 +163,7 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //19 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //20 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -177,13 +177,13 @@ static const command step[] = {
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //23 laps (roughly 5 egg cycles)
-	/*
-
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //24 lap
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //25 laps
@@ -205,7 +205,7 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //29 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //30 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -230,12 +230,14 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
-	{ LEFT, 		 55 }, //36 laps
+	{ LEFT, 		 55 }, //36 laps (roughly 8 egg cycles)
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //37 lap
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //38 laps
@@ -257,7 +259,7 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //42 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //43 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -266,13 +268,14 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
-	{ LEFT, 		 55 }, //45 laps
+	{ LEFT, 		 55 }, //45 laps (roughly 10 egg cycles)
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //46 laps
-
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //47 laps
@@ -294,7 +297,7 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //51 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //52 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -323,12 +326,14 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
-	{ LEFT, 		 55 }, //59 laps
+	{ LEFT, 		 55 }, //59 laps (roughly 13 egg cycles)
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //60 laps
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //61 laps
@@ -350,9 +355,8 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //65 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //66 laps
-
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
@@ -360,12 +364,14 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
-	{ LEFT, 		 55 }, //68 laps
+	{ LEFT, 		 55 }, //68 laps (roughly 15 egg cycles)
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //69 laps
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //70 laps
@@ -387,7 +393,7 @@ static const command step[] = {
 	{ LEFT, 		 55 }, //74 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //75 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -412,12 +418,14 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
-	{ LEFT, 		 55 }, //81 laps
+	{ LEFT, 		 55 }, //81 laps (roughly 18 egg cycles)
 	{ NOTHING, 		5 },
+
+
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //82 laps
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //83 laps
@@ -433,14 +441,13 @@ static const command step[] = {
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //86 laps
-
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //87 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
-	{ NOTHING, 		5 },
+	{ A, 	    		5 }, //Changed from NOTHING to A to hatch egg
 	{ LEFT, 		 55 }, //88 laps
 	{ NOTHING, 		5 },
 	{ RIGHT, 		 55 },
@@ -451,7 +458,8 @@ static const command step[] = {
 	{ NOTHING, 		5 },
 	{ LEFT, 		 55 }, //90 laps (roughly 20 egg cycles)
   { NOTHING, 		5 },
-	*/
+
+
 	//Some extra laps for good measure
 	{ RIGHT, 		 55 },
 	{ NOTHING, 		5 },
@@ -485,7 +493,7 @@ static const command step[] = {
 	{ RIGHT, 			27 },
 	{ NOTHING, 		 5 },
 	{ DOWN, 			10 },
-	{ NOTHING, 	 200 },
+	{ NOTHING, 	 200 }
 
 	//Repeat loop
 
