@@ -39,7 +39,7 @@ typedef enum {
 typedef struct {
 	Buttons_t button;
 	uint16_t duration;
-} command; 
+} command;
 
 static const command step[] = {
 	// Setup controller
@@ -51,139 +51,444 @@ static const command step[] = {
 	{ A,          5 },
 	{ NOTHING,  250 },
 
-	// Talk to Pondo
-	{ A,          5 }, // Start
-	{ NOTHING,   30 },
-	{ B,          5 }, // Quick output of text
-	{ NOTHING,   20 }, // Halloo, kiddums!
-	{ A,          5 }, // <- I'll try it!
-	{ NOTHING,   15 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ A,          5 }, // <- OK!
-	{ NOTHING,   15 },
-	{ B,          5 },
-	{ NOTHING,   20 }, // Aha! Play bells are ringing! I gotta set up the pins, but I'll be back in a flurry
-	{ A,          5 }, // <Continue>
-	{ NOTHING,  325 }, // Cut to different scene (Knock 'em flat!)
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ A,          5 }, // <Continue> // Camera transition takes place after this
-	{ NOTHING,   50 },
-	{ B,          5 },
-	{ NOTHING,   20 }, // If you can knock over all 10 pins in one roll, that's a strike
-	{ A,          5 }, // <Continue>
-	{ NOTHING,   15 },
-	{ B,          5 },
-	{ NOTHING,   20 }, // A spare is...
-	{ A,          5 }, // <Continue>
-	{ NOTHING,  100 }, // Well, good luck
-	{ A,          5 }, // <Continue>
-	{ NOTHING,  150 }, // Pondo walks away
+	// Walk up to nursery lady
+	{ LEFT,      21 },
+	{ NOTHING,   	5 },
+	{ UP,   			5 },
+	{ NOTHING,  	5 },
 
-	// Pick up Snowball (Or alternatively, run to bail in case of a non-strike)
-	{ A,          5 },
-	{ NOTHING,   50 },
-	{ LEFT,      42 },
-	{ UP,        80 },
-	{ THROW,     25 },
+	//Talk to nursery lady and replace first party member with egg
+	{ A, 					5 }, //start dialogue
+	{ NOTHING, 	100 },
+	{ A, 					5 }, //(yes) We found an egg...
+	{ NOTHING, 	150 },
+	{ A, 					5 }, //You recieved an egg...
+	{ NOTHING, 	150 },
+	{ A, 					5 }, //Add to party
+	{ NOTHING, 	125 },
+	{ A, 					5 }, //Please select Pokemon...
+	{ NOTHING, 	125 },
+	{ A, 					5 }, //(select first pokemon)
+	{ NOTHING, 	125 },
+	{ A, 					5 }, //The egg will be added...
+	{ NOTHING, 	125 },
+	{ A, 					5 }, //Take good care
+	{ NOTHING, 		10 },
 
-	// Non-strike alternative flow, cancel bail and rethrow
-	{ NOTHING,   30 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 }, // I have to split dialogue (It's nothing)
-	{ NOTHING,   15 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,  450 },
-	{ B,          5 }, // Snowly moly... there are rules!
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 }, // Second dialogue
-	{ NOTHING,   20 },
-	{ DOWN,      10 }, // Return to snowball
-	{ NOTHING,   20 },
-	{ A,          5 }, // Pick up snowball, we just aimlessly throw it
-	{ NOTHING,   50 },
-	{ UP,        10 },
-	{ THROW,     25 },
+	//Walk inside nursery
+	{ RIGHT,		 22 },
+	{ NOTHING, 		5 },
+	{ UP, 			 10 },
+	{ NOTHING,  150 },
 
-	// Back at main flow
-	{ NOTHING,  175 }, // Ater throw wait
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 }, // To the rewards
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	
-	{ B,          5 }, // Wait for 450 cycles by bashing B (Like real players do!)
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 },
-	{ B,          5 },
-	{ NOTHING,   20 } // Saving, intermission
+	//Hatch the egg (I think roughly 4.5 laps per egg cycle)
+	{ LEFT, 		 25 }, //Find left corner initially
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //1 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //2 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //3 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //4 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //5 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //6 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //7 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //8 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //9 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //10 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //11 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //12 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //13 laps (roughly 3 egg cycles)
+
+
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //14 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //15 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //16 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //17 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //18 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //19 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //20 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //21 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //22 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //23 laps (roughly 5 egg cycles)
+	/*
+
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //24 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //25 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //26 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //27 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //28 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //29 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //30 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //31 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //32 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //33 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //34 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //35 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //36 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //37 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //38 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //39 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //40 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //41 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //42 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //43 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //44 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //45 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //46 laps
+
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //47 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //48 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //49 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //50 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //51 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //52 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //53 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //54 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //55 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //56 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //57 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //58 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //59 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //60 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //61 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //62 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //63 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //64 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //65 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //66 laps
+
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //67 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //68 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //69 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //70 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //71 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //72 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //73 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //74 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //75 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //76 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //77 lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //78 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //79 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //80 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //81 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //82 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //83 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //84 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //85 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //86 laps
+
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //87 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //88 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //89 laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //90 laps (roughly 20 egg cycles)
+  { NOTHING, 		5 },
+	*/
+	//Some extra laps for good measure
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //1 extra lap
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //2 extra laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //3 extra laps
+	{ NOTHING, 		5 },
+	{ RIGHT, 		 55 },
+	{ NOTHING, 		5 },
+	{ LEFT, 		 55 }, //4 extra laps
+	{ NOTHING, 		5 },
+
+	//Hatch the egg
+	{ A, 					5 }, //Oh...
+	{ NOTHING, 	625 },
+	{ A, 					5 }, //"Pokemon" hatched from the egg
+	{ NOTHING, 	125 },
+
+	//Find left corner
+	{ LEFT, 		  75 },
+	{ NOTHING, 		 5 },
+
+
+	//Exit nursery
+	{ RIGHT, 			27 },
+	{ NOTHING, 		 5 },
+	{ DOWN, 			10 },
+	{ NOTHING, 	 200 },
+
+	//Repeat loop
+
 };
 
 // Main entry point.
@@ -395,19 +700,19 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			{
 
 				case UP:
-					ReportData->LY = STICK_MIN;				
+					ReportData->LY = STICK_MIN;
 					break;
 
 				case LEFT:
-					ReportData->LX = STICK_MIN;				
+					ReportData->LX = STICK_MIN;
 					break;
 
 				case DOWN:
-					ReportData->LY = STICK_MAX;				
+					ReportData->LY = STICK_MAX;
 					break;
 
 				case RIGHT:
-					ReportData->LX = STICK_MAX;				
+					ReportData->LX = STICK_MAX;
 					break;
 
 				case A:
@@ -423,7 +728,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 					break;
 
 				case THROW:
-					ReportData->LY = STICK_MIN;				
+					ReportData->LY = STICK_MIN;
 					ReportData->Button |= SWITCH_R;
 					break;
 
@@ -445,7 +750,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			if (duration_count > step[bufindex].duration)
 			{
 				bufindex++;
-				duration_count = 0;				
+				duration_count = 0;
 			}
 
 
