@@ -60,12 +60,14 @@ static const command step[] = {
 	//Talk to nursery lady and replace first party member with egg
 	{ A, 					5 }, //start dialogue
 	{ NOTHING, 	100 },
-	{ A, 					5 }, //(yes) We found an egg...
+	{ A, 					5 }, //(yes) We found an egg... or Welcome...
 	{ NOTHING, 	150 },
-	{ A, 					5 }, //You recieved an egg...
+	{ B, 					5 }, //You recieved an egg... or Nevermind...
 	{ NOTHING, 	150 },
-	{ A, 					5 }, //Add to party
-	{ NOTHING, 	125 },
+	{ A, 					5 }, //Add to party or Do come back... or Do come back...
+	{ NOTHING, 	110 },
+	{ DOWN, 			5 }, //Face away from lady if no egg is ready
+	{ NOTHING, 	 10 },
 	{ A, 					5 }, //Please select Pokemon...
 	{ NOTHING, 	125 },
 	{ A, 					5 }, //(select first pokemon)
@@ -78,7 +80,7 @@ static const command step[] = {
 	//Walk inside nursery
 	{ RIGHT,		 22 },
 	{ NOTHING, 		5 },
-	{ UP, 			 10 },
+	{ UP, 			 15 },
 	{ NOTHING,  150 },
 
 	//Hatch the egg (I think roughly 4.5 laps per egg cycle)
