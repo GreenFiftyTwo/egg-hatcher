@@ -8,12 +8,10 @@ Prerequisites:
 1) Full pokemon party
 2) Lead pokemon isn't holding an item
 3) Pokemon with Flame Body ability is in party, but not in lead spot (not required if egg species has less than 20 egg cycles)
-4) Oval charm is recommended
+4) Settings: Fast text speed, Manually send to boxes, No nicknames
 5) Route 5 Nursery Lady has an egg ready
 
 Exit the Nursery on Route 5 and plug in the controller. It will automatically sync with the console, walk up to the Nursery Lady, take the egg and put it at the top of the party, and walk around inside the nursery to hatch it. It will start over and do this in a loop.
-
-Note that due to eggs having a random chance of being generated there will always be a possible, yet slim chance that an egg is not ready when you go to get a new one.  Currently this breaks the loop, however I hope to fix this in a future release.  This is part of the reason that the character walks 20 egg cycles regardles of what species you are hatching.  After 20 egg cycles the chance of an egg not being ready is very slim, especially with the oval charm.
 
 In case you see issues with controller conflicts while in docked mode, try using a USB-C to USB-A adapter in handheld mode. In dock mode, changes in the HDMI connection will briefly make the Switch not respond to incoming USB commands, skipping parts of the sequence. These changes may include turning off the TV, or switching the HDMI input. (Switching to the internal tuner will be OK, if this doesn't trigger a change in the HDMI input.)
 
@@ -34,14 +32,13 @@ Now you should be ready to rock. Open a terminal window in the `egg-hatcher` dir
 
 #### Potential Upgrades
 
-1) I would like to make it handle the situation where the Nursery Lady doesn't have an egg ready without breaking the loop
-2) I would like to optimize it to hit 20 eggs/hour, preferably without having to use different code for different egg cycles
-3) I would like to clean up the code and shorten it
-4) I would like to make a seperate program that automates releasing a box or two of pokemon
+1) I would like to optimize it to hit 20 eggs/hour, preferably without having to use different code for different egg cycles
+2) I would like to clean up the code and shorten it
+3) I would like to make a seperate program that automates releasing a box or two of pokemon
 
 #### Thanks
 
-Big thanks to bertrandom for his BOTW snowballer thrower that this code and a thousand others are forked from.  You made automating the switch much more accessible to beginning coders.
+Big thanks to bertrandom for his BOTW snowballer thrower that this code and a thousand others are forked from.  You made automating the switch much more accessible.
 
 Thanks to Shiny Quagsire for his [Splatoon post printer](https://github.com/shinyquagsire23/Switch-Fightstick) which bertrandom forked and progmem for his [original discovery](https://github.com/progmem/Switch-Fightstick) that began it all.
 
